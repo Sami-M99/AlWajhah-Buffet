@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Cairo;
+  src: url("./fonts/Cairo-VariableFont_slnt\,wght.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Alegreya;
+  src: url("./fonts/Alegreya-VariableFont_wght.ttf");
+  font-weight: normal;
+}
+
+
+.direction-ltr {
+  direction: ltr;
+}
+
+.direction-rtl {
+  direction: rtl;
+}

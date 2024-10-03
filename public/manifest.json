@@ -1,0 +1,43 @@
+{
+  "short_name": "Estirat Al-Wajha",
+  "name": "بوفية استراحة الواجهة",
+  "host_permissions": ["http://localhost:7000"],
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#384293",
+  "background_color": "#ffffff",
+  "description": "بوفية استراحة الواجهة - شكراً لاختيارك لنا مرحبا بك في بوفية استراحة الواجهة في عالمنا الشهي المليء بتشكيلات وأصناف متعددة ومتميزة.",
+  "lang": "ar",
+  "dir": "rtl",
+  "orientation": "any",
+  "categories": ["food", "restaurants"],
+  "screenshots": [
+    {
+      "src": "logo.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ]
+}
