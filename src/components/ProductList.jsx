@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import ProductSkeleton from './LoadingProducts';
 import { useTranslation } from 'react-i18next';
+import NotFoundImage from '../assets/notFoundImage.jpg'
 
 function ProductList({ products, loading, noProduct }) {
   const [t] = useTranslation();
@@ -32,7 +33,7 @@ function ProductList({ products, loading, noProduct }) {
           className="bg-white rounded-lg shadow-md overflow-hidden"
           whileHover={{ y: -5 }}
         >
-          <img src={product.image ? product.image.original : '../../src/assets/notFoundImage.jpg'} alt={product.name} className="w-full h-48 object-cover" />
+          <img src={product.image ? product.image.original : NotFoundImage} alt={product.name} className="w-full h-48 object-cover" />
           <div className="p-4">
             <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
             <p className="text-gray-600 mb-4">{product.short_description}</p>

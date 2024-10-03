@@ -9,6 +9,7 @@ export const getAllProducts = (language) => {
     });
 };
 
+// Get all categories
 export const getCategories = (language) => {
     return AxiosProvider.get("/tags/categories", {
         headers: {
@@ -17,6 +18,7 @@ export const getCategories = (language) => {
     });
 };
 
+// Get products by selected category
 export const getProducts = (id, language) => {
     return AxiosProvider.get("/shop/products", {
         params: {
@@ -29,6 +31,7 @@ export const getProducts = (id, language) => {
     });
 };
 
+// Get selected product
 export const single_product = (id, language) => {
     return AxiosProvider.get(`/shop/products/${id}`, {
         headers: {

@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { FaShoppingCart, FaUtensils } from "react-icons/fa";
 import { GiHotMeal } from "react-icons/gi";
+import HeroImage from "../assets/hero.png"
 
 const Hero = () => {
   const [t] = useTranslation();
@@ -84,7 +85,7 @@ const Hero = () => {
         whileTap={{ scale: 0.95 }}
       >
         <motion.img
-          src={"../../src/assets/mobile.png"}
+          src={HeroImage}
           alt="image"
           className="w-80 md:w-[520px] rounded-3xl shadow-2xl"
           initial={{ y: 20, opacity: 0 }}

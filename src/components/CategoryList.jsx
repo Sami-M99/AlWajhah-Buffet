@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import foodImage from '../assets/food.png'
 
 function CategoryList({ categories, activeCategory, onSelectCategory }) {
   const [t] = useTranslation();
@@ -78,7 +79,7 @@ function CategoryList({ categories, activeCategory, onSelectCategory }) {
             whileTap="tap"
           >
             <img 
-              src={category.image ? category.image.original : '../../src/assets/food.png'} 
+              src={category.image ? category.image.original : foodImage} 
               alt={category.name} 
               className='w-6 h-6 object-cover rounded-full'
             />
