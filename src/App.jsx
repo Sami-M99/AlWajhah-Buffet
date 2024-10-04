@@ -7,6 +7,7 @@ import ProductList from './components/ProductList';
 import SearchBar from './components/SearchBar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   const { i18n } = useTranslation();
@@ -91,6 +92,7 @@ function App() {
           onSelectCategory={handleCategorySelect}
         />
         <ProductList products={displayedProducts} loading={loading} noProduct={noProduct} />
+        <ScrollToTopButton />
       </main>
       <Footer />
     </div>
