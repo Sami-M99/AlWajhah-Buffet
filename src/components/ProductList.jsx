@@ -35,7 +35,7 @@ function ProductList({ products, loading, noProduct }) {
         >
           <div className="relative pb-[60%] overflow-hidden">
             <motion.img 
-              src={product.image ? product.image.original : NotFoundImage} 
+              src={product.image ? product.image.thumb : NotFoundImage} 
               alt={product.name} 
               className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 transform hover:scale-110"
             />
@@ -46,7 +46,8 @@ function ProductList({ products, loading, noProduct }) {
           
           <div className="p-4">
             <h3 className="text-base font-bold mb-2 text-gray-800">{product.name}</h3>
-            <p className="text-gray-600 mb-4 line-clamp-2">{product.short_description}</p>
+            <p className="text-gray-600 mb-2 line-clamp-2">{product.short_description}</p>
+            <q className="text-[#384293] mb-2 text-xs">{t('productNote')}</q>
             <div className="space-y-2 mt-1">
               {product.prices_units.data.map((unit, index) => (
                 <p key={index} className="text-sm text-gray-500 flex justify-between">

@@ -1,13 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Routes, Route } from 'react-router-dom';
 import { getAllProducts, getCategories, getProducts } from './ApiFunctions';
 import Header from './components/Header';
-import CategoryList from './components/CategoryList';
-import ProductList from './components/ProductList';
-import SearchBar from './components/SearchBar';
-import Hero from './components/Hero';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import ProductTablePage from './pages/ProductTablePage';
+import HomePage from './pages/HomePage';
 
 function App() {
   const { i18n } = useTranslation();
@@ -20,7 +19,7 @@ function App() {
 
   useEffect(() => {
     fetchInitialData();
-  }, [i18n.language]); // Re-fetch when language changes
+  }, [i18n.language]);
 
   const fetchInitialData = async () => {
     try {
@@ -75,7 +74,6 @@ function App() {
     }
   };
 
-  // Function to change language
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
@@ -84,14 +82,20 @@ function App() {
     <div className={`min-h-screen bg-gradient-to-r from-blue-50 to-purple-50 ${i18n.language == 'ar' ? "direction-rtl font-['Cairo']" : "direction-ltr font-['Alegreya']"}`}>
       <Header onChangeLanguage={changeLanguage} />
       <main className="container mx-auto px-4 py-8">
-        <Hero />
-        <SearchBar onSearch={handleSearch} />
-        <CategoryList 
-          categories={categories} 
-          activeCategory={activeCategory}
-          onSelectCategory={handleCategorySelect}
-        />
-        <ProductList products={displayedProducts} loading={loading} noProduct={noProduct} />
+        <Routes>
+          <Route path="/" element={
+            <HomePage 
+              handleSearch={handleSearch}
+              categories={categories}
+              activeCategory={activeCategory}
+              handleCategorySelect={handleCategorySelect}
+              displayedProducts={displayedProducts}
+              loading={loading}
+              noProduct={noProduct}
+            />
+          } />
+          <Route path="/product-table" element={<ProductTablePage products={allProducts} />} />
+        </Routes>
         <ScrollToTopButton />
       </main>
       <Footer />

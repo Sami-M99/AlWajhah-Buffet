@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import Logo from '../assets/logo.png';
 import { FaGlobe } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [t, i18n] = useTranslation("translation");
@@ -20,13 +21,15 @@ function Header() {
     >
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <motion.img 
-            src={Logo} 
-            alt="Restaurant Logo" 
-            className="h-16 w-auto"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          />
+          <Link to="/">
+            <motion.img 
+              src={Logo} 
+              alt="Restaurant Logo" 
+              className="h-16 w-auto"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            />
+          </Link>
           <motion.h1 
             className="text-2xl font-bold text-white text-center flex-grow"
             initial={{ opacity: 0 }}

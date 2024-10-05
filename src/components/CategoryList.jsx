@@ -79,7 +79,7 @@ function CategoryList({ categories, activeCategory, onSelectCategory }) {
             whileTap="tap"
           >
             <img 
-              src={category.image ? category.image.original : foodImage} 
+              src={category.image ? category.image.thumb : foodImage} 
               alt={category.name} 
               className='w-6 h-6 object-cover rounded-full'
             />
